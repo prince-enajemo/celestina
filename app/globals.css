@@ -1,26 +1,81 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #1a0a0d;
+  --bg-soft: #241014;
+  --wine: #7a1f2b;
+  --gold: #c9a24b;
+  --gold-soft: #e2c98a;
+  --blush: #e8b4bc;
+  --ivory: #f2e9e4;
+  --ivory-dim: #cbb9b5;
+
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Jost", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ivory);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+button {
+  font-family: var(--font-body);
+}
+
+/* ---------- floating symbols (ambient background) ---------- */
+
+.floating-layer {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-symbol {
+  position: absolute;
+  bottom: -10vh;
+  opacity: 0;
+  animation-name: drift-up;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes drift-up {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: var(--sym-opacity, 0.5);
+  }
+  92% {
+    opacity: var(--sym-opacity, 0.5);
+  }
+  100% {
+    transform: translateY(-115vh) translateX(var(--drift-x, 20px))
+      rotate(var(--drift-r, 20deg));
+    opacity: 0;
+  }
 }
