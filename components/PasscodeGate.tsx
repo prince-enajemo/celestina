@@ -44,8 +44,8 @@ export default function PasscodeGate({
         }}
         className={shake ? "shake" : ""}
       >
-        <p style={styles.eyebrow}>a private place</p>
-        <h1 style={styles.title}>enter her name</h1>
+        <p style={styles.eyebrow}>a private place built by REX</p>
+        <h1 style={styles.title}>Enter the passcode</h1>
         <input
           autoFocus
           type="text"
