@@ -107,37 +107,51 @@ export default function Home() {
             <section style={styles.letterSection}>
               <div style={styles.letterGlass}>
                 <div style={styles.letter}>
-                  <p>
-                    I don't know how to say this without it sounding smaller
-                    than it is, so I'll just say it plainly: you are the
-                    calmest, warmest thing in my life. Every ordinary day
-                    becomes something worth remembering the moment you're in
-                    it.
-                  </p>
-                  <p>
-                    I call you iyawo mi because that's how I already think of
-                    you — not as something I'm hoping for, but something I
-                    already have and don't take for granted. You. The way you
-                    laugh at your own jokes before you finish telling them.
-                    The way you show up for the people you love, no
-                    exceptions.
-                  </p>
-                  <p>
-                    People talk about love like it's one big feeling, but for
-                    me it's mostly made of small ones — the relief of a text
-                    back, the specific way my shoulders drop when you walk
-                    into a room, the quiet decision every single day to keep
-                    choosing you. I wanted somewhere to put all of that down,
-                    instead of just carrying it around in my head.
-                  </p>
-                  <p>
-                    So this little site is a place to keep some of you — the
-                    videos that make me smile when I miss you, the reasons I
-                    love you when I actually sit down and count them, and the
-                    words I don't say often enough out loud. Scroll down, take
-                    your time.
-                  </p>
-                  <p style={styles.signature}>always yours,</p>
+                  <div style={styles.letterParagraph}>
+                    <span style={styles.letterLead}>
+                      I don't know how to say this without it sounding smaller
+                      than it is, so I'll just say it plainly: you are the
+                      calmest, warmest thing in my life. Every ordinary day
+                      becomes something worth remembering the moment you're in
+                      it.
+                    </span>
+                  </div>
+
+                  <div style={styles.letterParagraph}>
+                    <span style={styles.letterLead}>
+                      I call you iyawo mi because that's how I already think of
+                      you — not as something I'm hoping for, but something I
+                      already have and don't take for granted. You. The way you
+                      laugh at your own jokes before you finish telling them.
+                      The way you show up for the people you love, no
+                      exceptions.
+                    </span>
+                  </div>
+
+                  <div style={styles.letterParagraph}>
+                    <span style={styles.letterLead}>
+                      People talk about love like it's one big feeling, but for
+                      me it's mostly made of small ones — the relief of a text
+                      back, the specific way my shoulders drop when you walk
+                      into a room, the quiet decision every single day to keep
+                      choosing you. I wanted somewhere to put all of that down,
+                      instead of just carrying it around in my head.
+                    </span>
+                  </div>
+
+                  <div style={styles.letterParagraph}>
+                    <span style={styles.letterLead}>
+                      So this little site is a place to keep some of you — the
+                      videos that make me smile when I miss you, the reasons I
+                      love you when I actually sit down and count them, and the
+                      words I don't say often enough out loud. Scroll down, take
+                      your time.
+                    </span>
+                  </div>
+
+                  <div style={styles.signatureWrap}>
+                    <p style={styles.signature}>always yours,</p>
+                  </div>
                 </div>
               </div>
             </section>
@@ -378,7 +392,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   letter: {
     fontFamily: "var(--font-display)",
-    fontSize: 24,
+    fontSize: 20,
     lineHeight: 1.7,
     color: "var(--ivory)",
     maxWidth: 620,
@@ -390,10 +404,29 @@ const styles: Record<string, React.CSSProperties> = {
     backdropFilter: "blur(14px)",
     WebkitBackdropFilter: "blur(14px)",
   },
-  signature: {
+  letterParagraph: {
+    fontFamily: "var(--font-display)",
     fontStyle: "italic",
+    fontSize: 20,
+    lineHeight: 1.72,
+    color: "var(--ivory)",
+    margin: "0 0 24px",
+    padding: "0 0 12px",
+    borderBottom: "1px solid rgba(232,180,188,0.14)",
+  },
+  letterLead: {
+    display: "block",
+  },
+  signatureWrap: {
+    marginTop: 26,
+  },
+  signature: {
+    fontFamily: "var(--font-display)",
+    fontStyle: "italic",
+    fontSize: 26,
     color: "var(--gold-soft)",
-    marginTop: 30,
+    margin: 0,
+    textAlign: "right",
   },
   section: {
     padding: "60px 0",
